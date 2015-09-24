@@ -1,0 +1,2 @@
+这是个消息生成工具，可以很方便的生成自定义的二进制消息实体。目前支持的又java服务器和protobuf
+客户端支持的有c++，lua，google protobuf

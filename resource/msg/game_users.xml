@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages xmlns="http://www.opengame.org/game/dtd/messages"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.opengame.org/game/dtd/messages messages.xsd" package="com.game.kupao" module="user">
+	<macro name="UserInfo" comnent="用户信息">
+	    <field name="name" type="String" comnent="名字"></field>
+	    <field name="age" type="Short" comnent="age"></field>
+	    <field name="address" type="String" comnent="地址"></field>
+	    <field name="number" type="Integer" comnent="邮编"></field>
+	</macro>
+	
+	<message name="CG_GATE_LOGIN" comnent="登陆消息">
+	    <field name="name" type="String" comnent="用户名"></field>
+	    <field name="passwd" type="String" comnent="密码"></field>
+	</message>
+	
+	<message name="CG_GAME_LOGIN" comnent="登陆消息，转换到游戏服务器">
+	    <field name="name" type="String" comnent="用户名"></field>
+	    <field name="passwd" type="String" comnent="密码"></field>
+	</message>
+	
+	
+	<message name="GC_LOGIN" comnent="登陆返回消息">
+	    <field name="status" type="Boolean" comnent="true成功"></field>
+	</message>
+	
+	<message name="CG_GATE_USER_INFO" comnent="用户信息">
+	</message>
+	
+	<message name="CGW_SYNC_USER_INFO" comnent="同步获取用户消息">
+	    <field name="name" type="String" comnent="名字"></field>
+	    <field name="pwd" type="String" comnent="密码"></field>
+	</message>
+	
+	<message name="GWC_SYNC_USER_INFO" comnent="同步获取用户消息返回">
+	    <field name="name" type="String" comnent="名字"></field>
+	    <field name="pwd" type="String" comnent="密码"></field>
+	    <field name="age" type="Integer" comnent="年龄"></field>
+	</message>
+	
+	<message name="CG_REGISTER_USER" comnent="用户注册">
+		<field name="name" type="String" comnent="用户名"></field>
+		<field name="passwd" type="String" comnent="密码"></field>
+		<field name="email" type="String" comnent="电子邮箱" ></field>
+		<field name="phone" type="String" comnent="手机号码"></field>
+	</message>
+	
+	<message name="GC_REGISTER_USER" comnent="用户注册相应消息">
+	    <field name="code" type="Byte" comnent="注册相应状态码"></field>
+	</message>
+	
+	<message name="CG_USER_INFO" comnent="获取用户信息" parent="com.game.core.net.msg.BaseMianTransfersMessage" > 
+		<field name="accountId" type="Long" comnent="用户id"></field>
+	</message>
+	
+	<message name="GC_USER_INFO" comnent="返回用户信息" parent="com.game.core.net.msg.BaseMianTransfersMessage">
+	    <field name="accountId" type="Long" comnent="id"></field>
+	    <field name="name" type="String" comnent="用户名"></field>
+		<field name="passwd" type="String" comnent="密码"></field>
+		<field name="email" type="String" comnent="电子邮箱" ></field>
+		<field name="phone" type="String" comnent="手机号码"></field>
+	</message>
+	 
+	<message name="CG_TEST_MSG" comnent="获取用户信息" parent="com.game.core.net.msg.DefaultBaseProtoBuffMianMessage"> 
+		<field name="accountId" type="Long" comnent="id"></field>
+		<field name="love" type="String" comnent="爱好"></field>
+	    <field name="autoLogin" type="Boolean" comnent="是否自动登录"></field>
+	    <field name="ages" type="Integer" comnent="age"></field>
+	    <field name="bytes" type="Byte" comnent="byte"></field>
+	    <field name="float1" type="Float" comnent="Float"></field>
+	    <field name="doubles" type="Double" comnent="Double"></field>
+	    <field name="userInfos" type="UserInfo" comnent="用户信息" macro="UserInfo" list="true"></field>
+	   
+		<field name="pwd" type="Integer" comnent="密码"></field>
+		<field name="Short" type="Short" comnent="Short" list="true"></field>
+		<field name="email" type="String" comnent="电子邮箱" ></field>
+		<field name="userInfo" type="UserInfo" comnent="用户信息" macro="UserInfo"></field>
+		<field name="phone" type="String" comnent="手机号码"></field>
+	</message>
+</messages>

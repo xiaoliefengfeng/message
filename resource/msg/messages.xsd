@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.opengame.org/game/dtd/messages"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:msg="http://www.opengame.org/game/dtd/messages">
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<element name="messages" type="msg:messages"></element>
+
+
+
+
+
+
+	<complexType name="messages">
+		<sequence>
+			<element name="macro" type="msg:macro" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+			<element name="message" type="msg:message"
+				maxOccurs="unbounded" minOccurs="1">
+			</element>
+		</sequence>
+		<attribute name="package" type="string" use="required"></attribute>
+		<attribute name="module" type="string" use="required"></attribute>
+	</complexType>
+
+	<complexType name="message">
+		<sequence>
+			<element name="field" type="msg:field" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+		</sequence>
+		<attribute name="name" type="string" use="required"></attribute>
+		<attribute name="parent" type="string" use="optional"></attribute>
+		<attribute name="comnent" type="string" use="required"></attribute>
+		<attribute name="package" type="string" use="optional"></attribute>
+	</complexType>
+
+	<complexType name="field">
+		<sequence>
+			<element name="field" type="msg:field" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+		</sequence>
+		<attribute name="name" type="string" use="required"></attribute>
+		<attribute name="type" type="string" use="required"></attribute>
+		<attribute name="comnent" type="string" use="required"></attribute>
+		<attribute name="list" type="boolean" use="optional"></attribute>
+		<attribute name="macro" type="string" use="optional"></attribute>
+		<attribute name="protobuf" type="string"></attribute>
+	</complexType>
+
+	<simpleType name="onlytrue">
+		<restriction base="boolean"></restriction>
+	</simpleType>
+
+
+
+
+	<complexType name="macro">
+		<sequence>
+			<element name="field" type="msg:field" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+		</sequence>
+		<attribute name="name" type="string" use="required"></attribute>
+		<attribute name="comnent" type="string" use="optional"></attribute>
+		<attribute name="parent" type="string" use="optional"></attribute>
+		<attribute name="package" type="string" use="optional"></attribute>
+	</complexType>
+</schema>
